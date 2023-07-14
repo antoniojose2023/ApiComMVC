@@ -1,4 +1,4 @@
-package br.com.antoniojoseuchoa.apicommvc.model.api
+package br.com.antoniojoseuchoa.apicommvc.api
 
 import br.com.antoniojoseuchoa.apicommvc.model.Artigo
 import retrofit2.Response

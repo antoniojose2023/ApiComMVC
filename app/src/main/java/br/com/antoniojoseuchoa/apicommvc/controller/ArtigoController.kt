@@ -1,16 +1,15 @@
 package br.com.antoniojoseuchoa.apicommvc.controller
 
 import android.util.Log
+import br.com.antoniojoseuchoa.apicommvc.api.RetrofitService
 import br.com.antoniojoseuchoa.apicommvc.model.Artigo
-import br.com.antoniojoseuchoa.apicommvc.model.api.RetrofitService
 import br.com.antoniojoseuchoa.apicommvc.view.MainActivity
 import kotlinx.coroutines.*
 import retrofit2.Response
 
-class ArtigoPresenter(val activity: MainActivity) {
+class ArtigoController(val activity: MainActivity) {
 
     private val retrofit = RetrofitService.retrofit
-
     val coroutine =  CoroutineScope(Dispatchers.IO)
 
     fun recuperarArtigos(){
@@ -19,7 +18,7 @@ class ArtigoPresenter(val activity: MainActivity) {
              try{
                 retorno = retrofit.getArtigos()
                 withContext(Dispatchers.Main){
-                    if(retorno != null){
+                    if(retorno!!.isSuccessful){
                         val list = retorno?.body()
                         list?.let {
                             activity.exibirArtigos(it)

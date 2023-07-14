@@ -2,18 +2,18 @@ package br.com.antoniojoseuchoa.apicommvc.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.antoniojoseuchoa.apicommvc.controller.ArtigoPresenter
+import br.com.antoniojoseuchoa.apicommvc.controller.ArtigoController
 import br.com.antoniojoseuchoa.apicommvc.databinding.ActivityMainBinding
 import br.com.antoniojoseuchoa.apicommvc.model.Artigo
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private lateinit var artigoPresenter: ArtigoPresenter
+    private lateinit var artigoPresenter: ArtigoController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-         artigoPresenter = ArtigoPresenter(this)
+         artigoPresenter = ArtigoController(this)
          binding.btRecuperarArtigos.setOnClickListener {
              artigoPresenter.recuperarArtigos()
          }

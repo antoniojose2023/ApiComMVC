@@ -1,4 +1,4 @@
-package br.com.antoniojoseuchoa.apicommvc.model.api
+package br.com.antoniojoseuchoa.apicommvc.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
